@@ -1,0 +1,51 @@
+{
+  "name": "@sewingselami/joplin-plugin-sewlore-fabric-specimen-log",
+  "version": "1.0.0",
+  "description": "Record fabric specimens, compare before and after washing dimensions, and export local measurements.",
+  "license": "MIT",
+  "author": "Sewlore",
+  "homepage": "https://sewlore.com/pages/fabric-measurement-methods-guide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gokimedia/joplin-plugin-sewlore-fabric-specimen-log.git"
+  },
+  "keywords": [
+    "joplin-plugin",
+    "fabric",
+    "sewing",
+    "measurements",
+    "csv"
+  ],
+  "files": [
+    "publish",
+    "src",
+    "api",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "PRIVACY.md",
+    "build.mjs",
+    "tsconfig.json",
+    "THIRD-PARTY-NOTICES.md",
+    "release.py"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "dist": "npm run typecheck && npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run dist && node --test tests/*.test.mjs",
+    "release": "npm test && python release.py"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "tar": "7.5.22",
+    "typescript": "5.9.3",
+    "@types/node": "26.6.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
